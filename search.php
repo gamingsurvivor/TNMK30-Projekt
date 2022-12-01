@@ -27,8 +27,8 @@
 
   <form class= "form" action = "search.php" method ="POST" >
         <select name="selectedValue">
-            <option value="Newest">Newest</option>
-            <option value="Best Sellers">Best Sellers</option>
+            <option value="Set-id">Set-id</option>
+            <option value="Set-name">Set-name</option>
             <option value="Alphabetical">Alphabetical</option>
         </select>
             <label for="text"> Set id</label> <br>
@@ -41,7 +41,7 @@
 <?php
 
 switch($_POST['selectedValue']){
-    case 'Newest':
+    case 'Set-id':
      
     $connection = mysqli_connect("mysql.itn.liu.se", "lego", "", "lego");
  
@@ -122,13 +122,166 @@ while   ($row =  mysqli_fetch_array($result)){
     ) ;
 }
     break;
-    case 'Best Sellers':
+    case 'Set-name':
+         
+    $connection = mysqli_connect("mysql.itn.liu.se", "lego", "", "lego");
+ 
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+
+    $setname = $_POST['text'];
+    $query = "SELECT * FROM sets WHERE Setname = '$setname'";
+    $result = mysqli_query($connection,  $query);
+
+
+    if ($row   =  mysqli_fetch_array($result)){
+        $SetID = $row['SetID'];
+
         print("
-        <h3> parts </h3>"
-       
+        <h3> parts included in set $SetID ($setname):</h3>
+        <table>
+           <tr>
+             <td> Quantity </td>
+             <td> Color </td>
+             <td> part name </td>
+             <td>Image </td>
+            
+           
+           
+            
+             
+           </tr>
+        </table>"
     );
+}  
+
+$query = "SELECT inventory.Quantity, inventory.SetID, inventory.ItemID, parts.Partname, images.ItemID, images.ItemtypeID,images.ColorID,
+images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, colors.Colorname , sets.SetID,  sets.Setname FROM sets, inventory, parts, colors, images WHERE 
+sets.Setname like '$setname' AND parts.PartID = inventory.ItemID AND colors.ColorID = inventory.ColorID AND images.ItemID = inventory.ItemID
+AND colors.ColorID = images.ColorID AND sets.SetID = inventory.SetID  ORDER BY inventory.Quantity DESC";
+
+$result = mysqli_query($connection, $query);
+
+
+while   ($row =  mysqli_fetch_array($result)){
+
+    $invpart = $row['Partname'];
+    $invqual = $row['Quantity'];
+    $colorsname = $row['Colorname'];
+    $itemid = $row['ItemID'];
+    $itemtype = $row['ItemtypeID'];
+    $colorid = $row['ColorID'];
+    $gif = $row['has_gif'];
+    $jpg = $row['has_jpg'];
+    $imagesrc = "";
+    $file = "";
+
+    if ($jpg){
+        $imagesrc = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$itemtype/$colorid/$itemid.jpg";
+        $file = "$itemtype/$colorid/$itemid.jpg";
+
+    }
+    else if ($gif){
+        $imagesrc = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$itemtype/$colorid/$itemid.gif";
+        $file = "$itemtype/$colorid/$itemid.gif";
+    }
+
+    print (
+     "<table >
+         <tr>
+            
+            <td> $invqual </td>
+            <td> $colorsname </td>
+            <td> $invpart </td>
+            <td> <img src= $imagesrc> </td>
+            
+          
+         </tr>
+        <table>"
+    ) ;
+}
     break;
     case 'Alphabetical':
+
+         
+    $connection = mysqli_connect("mysql.itn.liu.se", "lego", "", "lego");
+ 
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+
+    $setname = $_POST['text'];
+
+    $query = "SELECT * FROM sets WHERE Setname = '$setname'";
+
+    $result = mysqli_query($connection,  $query);
+
+
+    if ($row   =  mysqli_fetch_array($result)){
+        $setID = $row['SetID'];
+
+        print("
+        <h3> parts included in set $setname ($setID):</h3>
+        <table>
+
+           <tr>
+             <td> Quantity </td>
+             <td> Color </td>
+             <td> part name </td>
+             <td>Image </td>     
+           </tr>
+
+        </table>"
+    );
+}  
+
+$query = "SELECT inventory.Quantity, inventory.SetID , inventory.ItemID, parts.Partname, images.ItemID, images.ItemtypeID,images.ColorID,
+images.has_gif, images.has_jpg, images.has_largegif, images.has_largejpg, colors.Colorname FROM sets, inventory, parts, colors, images WHERE 
+sets.Setname = '$setname'  AND ORDER BY inventory.Quantity DESC";
+
+$result = mysqli_query($connection, $query);
+
+
+while   ($row =  mysqli_fetch_array($result)){
+
+    $invpart = $row['Partname'];
+    $invqual = $row['Quantity'];
+    $colorsname = $row['Colorname'];
+    $itemid = $row['ItemID'];
+    $itemtype = $row['ItemtypeID'];
+    $colorid = $row['ColorID'];
+    $gif = $row['has_gif'];
+    $jpg = $row['has_jpg'];
+    $imagesrc = "";
+    $file = "";
+
+    if ($jpg){
+        $imagesrc = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$itemtype/$colorid/$itemid.jpg";
+        $file = "$itemtype/$colorid/$itemid.jpg";
+
+    }
+    else if ($gif){
+        $imagesrc = "http://www.itn.liu.se/~stegu76/img.bricklink.com/$itemtype/$colorid/$itemid.gif";
+        $file = "$itemtype/$colorid/$itemid.gif";
+    }
+
+    print (
+     "<table >
+         <tr>
+            
+            <td> $invqual </td>
+            <td> $colorsname </td>
+            <td> $invpart </td>
+            <td> <img src= $imagesrc> </td>
+            
+          
+         </tr>
+        <table>"
+    ) ;
+}
         // do Something for Alphabetical
     break;
     default:
