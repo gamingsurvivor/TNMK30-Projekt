@@ -6,7 +6,7 @@
     }
     html {
     font-size: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat medium', sans-serif;
     scroll-behavior: smooth;
     }
     a {
@@ -50,7 +50,7 @@
     padding: 10px 30px;
     color: white;
     background-color: transparent;
-    border: 2px solid fuchsia;
+    border: 2px solid #EE4B2B;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
@@ -59,11 +59,12 @@
     transition-property: background-color, color;
     }
     .cta:hover {
-    color: white;
-    background-color: darkkhaki;
+    color: black;
+    background-color: #EE4B2B;
     }
+
     .brand h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     color: white;
     }
@@ -80,9 +81,11 @@
     width: 100vw;
     height: auto;
     }
-    #header .header {
+    /* header */
+    #header .header { 
+    
     min-height: 8vh;
-    background-color: grey;
+    background-color: #EE4B2B;
     transition: .3s ease background-color;
     }
     #header.brand{
@@ -101,7 +104,6 @@
     #header .nav-list ul {
     list-style: none;
     position: absolute;
-    background-color: rgb(31, 30, 30);
     width: 100vw;
     height: 100vh;
     left: 100%;
@@ -218,7 +220,8 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: aqua;
+    background-image: url('34.png');
+    
     opacity: .7;
     z-index: -1;
     }
@@ -254,7 +257,7 @@
     left: 0;
     height: 100%;
     width: 0;
-    background-color: rgb(170, 255, 248);
+    background-color: #EE4B2B;
     animation: text_reveal_box 1s ease;
     animation-delay: .5s;
     }
