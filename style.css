@@ -20,8 +20,8 @@
     justify-content: center;
     }
     img {
-    height: 100%;
-    width: 35%;
+    height: 70px;
+    width: 350px;
     object-fit: cover;
     }
     p {
@@ -29,7 +29,7 @@
     font-size: 1.4rem;
     margin-top: 5px;
     line-height: 2.5rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: .05rem;
     }
     .section-title {
@@ -44,7 +44,6 @@
     .section-title span {
     color: black;
     }
-    
     .cta {
     display: inline-block;
     padding: 10px 30px;
@@ -67,11 +66,12 @@
     text-transform: uppercase;
     color: white;
     text-align: center;
+
+
     }
     .brand{
       width: 50%;
     }
-    
     /* Header section */
     #header {
     position: fixed;
@@ -211,6 +211,7 @@
     background-position: top center;
     position: relative;
     z-index: 1;
+
     }
     #hero::after {
     content: '';
@@ -220,8 +221,7 @@
     height: 100%;
     width: 100%;
     background-image: url('34.png');
-    
-    opacity: .7;
+    opacity: .75;
     z-index: -1;
     }
     
@@ -269,7 +269,6 @@
     #hero h1:nth-child(3) span {
     animation-delay: 2.5s;
     }
-    
     /* End Hero Section */
 
     /* Lego figures */
@@ -424,7 +423,6 @@
     padding-top: 50px;
     padding-bottom: 10px;
     }
-   
     #footer h2 {
     color: white;
     font-weight: 500;
@@ -455,8 +453,6 @@
     }
     /* End Footer */
     
-    
-    
     /* Keyframes */
     @keyframes hamburger_puls {
     0% {
@@ -486,7 +482,7 @@
     @keyframes text_reveal_name {
     100% {
     color: black;
-    font-weight: 500;
+    font-weight: 600;
     }
     }
     /* End Keyframes */
@@ -498,7 +494,8 @@
     padding: 20px 60px;
     }
     h1.section-title {
-    font-size: 6rem;
+    font-size: 4rem;
+    font-weight: 600;
     }
     
     /* Hero */
