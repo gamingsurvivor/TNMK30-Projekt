@@ -21,7 +21,7 @@
     }
     img {
     height: 100%;
-    width: 100%;
+    width: 35%;
     object-fit: cover;
     }
     p {
@@ -62,14 +62,13 @@
     color: black;
     background-color: #EE4B2B;
     }
-
     .brand h1 {
     font-size: 4rem;
     text-transform: uppercase;
     color: white;
     }
-    .brand h1 span {
-    color: black;
+    .brand{
+      width: 50%;
     }
     
     /* Header section */
@@ -81,9 +80,9 @@
     width: 100vw;
     height: auto;
     }
+
     /* header */
     #header .header { 
-    
     min-height: 8vh;
     background-color: #EE4B2B;
     transition: .3s ease background-color;
@@ -206,7 +205,6 @@
     
     /* Hero Section */
     #hero {
-    
     background-color: black;
     background-size: cover;
     background-position: top center;
@@ -334,128 +332,7 @@
     text-align: left;
     }
     /* End Services Section */
-    
-    /* Projects section */
-    #projects .projects {
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 0;
-    }
-    #projects .projects-header h1 {
-    margin-bottom: 50px;
-    }
-    #projects .all-projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    }
-    #projects .project-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    }
-    #projects .project-info {
-    padding: 30px;
-    flex-basis: 50%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-    color: blue;
-    }
-    #projects .project-info h1 {
-    font-size: 4rem;
-    font-weight: 500;
-    }
-    #projects .project-info h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-top: 10px;
-    }
-    #projects .project-info p {
-    color: green;
-    }
-    #projects .project-img {
-    flex-basis: 50%;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-    }
-    #projects .project-img:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-    opacity: .7;
-    }
-    #projects .project-img img {
-    transition: .3s ease transform;
-    }
-    #projects .project-item:hover .project-img img {
-    transform: scale(1.1);
-    }
-    /* End Projects section */
-    
-    /* About Section */
-    #about .about {
-    flex-direction: column-reverse;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 20px;
-    }
-    #about .col-left {
-    width: 250px;
-    height: 360px;
-    }
-    #about .col-right {
-    width: 100%;
-    }
-    #about .col-right h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: .2rem;
-    margin-bottom: 10px;
-    }
-    #about .col-right p {
-    margin-bottom: 20px;
-    }
-    #about .col-right .cta {
-    color: black;
-    margin-bottom: 50px;
-    padding: 10px 20px;
-    font-size: 2rem;
-    }
-    #about .col-left .about-img {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    border: 10px solid white;
-    }
-    #about .col-left .about-img::after {
-    content: '';
-    position: absolute;
-    left: -33px;
-    top: 19px;
-    height: 98%;
-    width: 98%;
-    border: 7px solid crimson;
-    z-index: -1;
-    }
-    /* End About Section */
-    
+
     /* contact Section */
     #contact .contact {
     flex-direction: column;
@@ -598,52 +475,6 @@
     }
     /* End Services Section */
     
-    /* Project */
-    #projects .project-item {
-    flex-direction: row;
-    }
-    #projects .project-item:nth-child(even) {
-    flex-direction: row-reverse;
-    }
-    #projects .project-item {
-    height: 400px;
-    margin: 0;
-    width: 100%;
-    border-radius: 0;
-    }
-    #projects .all-projects .project-info {
-    height: 100%;
-    }
-    #projects .all-projects .project-img {
-    height: 100%;
-    }
-    /* End Project */
-    
-    /* About */
-    #about .about {
-    flex-direction: row;
-    }
-    #about .col-left {
-    width: 600px;
-    height: 400px;
-    padding-left: 60px;
-    }
-    #about .about .col-left .about-img::after {
-    left: -45px;
-    top: 34px;
-    height: 98%;
-    width: 98%;
-    border: 10px solid crimson;
-    }
-    #about .col-right {
-    text-align: left;
-    padding: 30px;
-    }
-    #about .col-right h1 {
-    text-align: left;
-    }
-    /* End About */
-    
     /* contact  */
     #contact .contact {
     flex-direction: column;
@@ -709,105 +540,3 @@
     margin: 1.5%;
     }
     }
-
-
-    /* End  Media Query For Desktop */
-    *{
-        margin: 0;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      .text{
-        color: gray;
-        margin: 0px;
-        padding-top: 10px;
-      }
-      
-      .bild{
-        width: 100%;
-        height: 100%;
-        padding: 40px;
-      }
-      
-      
-      .rubrik{
-        padding-left: 50%;
-        font-size: 50px;
-        padding-right: 50%;
-      }
-      
-      .underrubrik{
-        font-size: 30px;
-      }
-      
-      .main_content{
-        color: aqua;
-        padding: 100px 20px;
-      }
-      
-      .meny {
-        background-color: black;
-        overflow: hidden;
-      }
-      
-      .meny a {
-        float: left;
-        color:white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      
-      
-      .meny a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-      
-      
-      .column {
-        float: left;
-        width: 50%;
-        height: 500px;
-        background-color: aqua;
-      }
-      
-      .clock{
-        font-family: Arial, Helvetica, sans-serif;
-        color: black;
-        font-weight: bold;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        font-size: 70px;
-      }
-      
-      button{
-        
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin-bottom: 20px;
-        cursor: pointer;
-      }
-      
-      
-      .texten{
-        font-size: 20px;
-      }
-      
-      .form{
-        padding-bottom: 100px;
-        padding-top: 100px;
-      }
-      
-      
-      table, tr, td {
-        background-color: #f7f7f7;
-          color: rgb(20, 20, 19);
-        border: 1px solid;
-        width: 1000px;
-        padding: 10px;
-      }
