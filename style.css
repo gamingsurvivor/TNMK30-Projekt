@@ -66,6 +66,7 @@
     font-size: 4rem;
     text-transform: uppercase;
     color: white;
+    text-align: center;
     }
     .brand{
       width: 50%;
@@ -270,7 +271,44 @@
     }
     
     /* End Hero Section */
-    
+
+    /* Lego figures */
+    .redblock {
+      width: 500px;
+      height: 500px;
+      background-color: #EE4B2B;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: center;
+      justify-content: space-around;
+    }
+    .firstcol{
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .secondcol{
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    #legoguy1{
+      width: 30%;
+      display: flex;
+      align-self: center;
+    }
+    #legoguy2{
+      width: 30%;
+      display: flex;
+      align-self: center;
+    }
+    /* Lego figures end */
+
     /* Services Section */
     #services .services {
     flex-direction: column;
@@ -386,6 +424,7 @@
     padding-top: 50px;
     padding-bottom: 10px;
     }
+   
     #footer h2 {
     color: white;
     font-weight: 500;
