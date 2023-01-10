@@ -100,8 +100,8 @@
     height: 100%;
     max-width: 1300px;
     padding: 0 10px;
-    }
-    #header .nav-list ul {
+   }
+    /* #header .nav-list ul {
     list-style: none;
     position: absolute;
     width: 100vw;
@@ -145,9 +145,34 @@
     transform: translate(-50%, -50%) scale(1);
     letter-spacing: initial;
     }
-    #header .nav-list ul li:hover a {
+    /* #header .nav-list ul li:hover a {
     color: black;
+    } */  
+
+    #header .nav-links ul li {
+
+    display: block;      
+      
     }
+
+    #header .nav-links{
+      position: absolute;
+      background: #EE4B2B;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    #header .navlinks ul {
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+    }
+
     #header .hamburger {
     height: 60px;
     width: 60px;
@@ -175,7 +200,7 @@
     #header .hamburger .bar {
     height: 2px;
     width: 30px;
-    position: relative;
+    position: absolute;
     background-color: black;
     z-index: -1;
     }
@@ -202,6 +227,16 @@
     #header .hamburger.active .bar::after {
     top: 0;
     }
+    #header .menu{
+      opacity: 0;
+      width: 100%;
+      transform: translateY(-100%);
+      transition: transform 0.2s ease;
+
+    }
+    #header .menu:target{
+      transform: translateY(0);
+    }
     /* End Header section */
     
     /* Hero Section */
@@ -221,10 +256,6 @@
     height: 100%;
     width: 100%;
     background-image: url('34.png');
-<<<<<<< HEAD
-=======
-    
->>>>>>> 43380cf354b7ac7919038e251b94d9aecd6e6c0c
     opacity: .75;
     z-index: -1;
     }
@@ -616,6 +647,7 @@
     font-size: 4rem;
     font-weight: 600;
     }
+
     
     /* Hero */
     #hero h1 {
@@ -672,7 +704,7 @@
     #header .hamburger {
     display: none;
     }
-    #header .nav-list ul {
+    /* #header .nav-list ul {
     position: initial;
     display: block;
     height: auto;
@@ -687,7 +719,7 @@
     }
     #header .nav-list ul a:after {
     display: none;
-    }
+    } */
     /* End header */
     
     #services .service-bottom .service-item {
