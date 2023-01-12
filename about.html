@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+</head>
+
+<body class="About">
+
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html"><img src="lego logo 4.0.png" alt="Logo"></a>
+        </div>
+        <div class="hamburger" onclick="showMenu()"><div class="bar"></div></div>
+        <div class="nav-pages">
+          <ul>
+            <li><a href="index.html" tabindex="1" data-after="Home" class="Home">Home</a></li>
+            <li><a href="about.html" tabindex="2" data-after="Service" class="About">About</a></li>
+            <li><a href="search.php" tabindex="3" data-after="Contact" class="Search">Search</a></li>
+          </ul>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <ul>
+            <li><a href="index.html" data-after="Home" class="Home">Home</a></li>
+            <li><a href="about.html" data-after="Service" class="About">About</a></li>
+            <li><a href="search.php" data-after="Contact" class="Search">Search</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">About</h1>
+        <p> we made this website to help fellow lego fans
+        </p>
+      </div>
+      <section class="redblock">
+        <section class="firstcol">
+          <section class="daniel">
+            <img src="lego man daniel.png" alt="legoman" id="legoguy1" ;>
+            <div class="overlay" ;>
+              <p>Daniel</p>
+            </div>
+          </section>
+          <section class="hans" ;>
+            <img src="lego man hans.png" alt="legoman" id="legoguy1">
+            <div class="overlay" ;>
+              <p>Hans</p>
+            </div>
+          </section>
+        </section>
+        <section class="secondcol">
+          <section class="linus" ;>
+            <img src="lego man linus.png" alt="legoman" id="legoguy2" ;>
+            <div class="overlay" ;>
+              <p>Linus</p>
+            </div>
+          </section>
+          <section class="elliot" ;>
+            <img src="lego man.png" alt="legoman" id="legoguy2" ;>
+            <div class="overlay" ;>
+              <p>Elliot</p>
+            </div>
+          </section>
+        </section>
+      </section>
+      <div class="service-bottom">
+        <div class="service-item">
+          <div class="icon"><img src="" /></div>
+          <h2>Daniel </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium architecto ab sed assumenda
+            possimus quisquam obcaecati doloribus neque consectetur, aliquid illum, modi sit qui sint inventore
+            temporibus asperiores earum. Voluptatum assumenda, nobis deleniti porro nemo dolor expedita, veritatis
+            voluptatem quidem quas exercitationem vel cum? Iusto, magni! Aliquam, error ipsa?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>Block</span> Browse</h1>
+      </div>
+      <h2>The future of lego search</h2>
+      <p>Copyright © 2022 Block Browse. All rights reserved</p>
+    </div>
+  </section>
+
+
+  <script>
+
+    var navLinks = document.getElementById("navLinks");
+    var show = false;
+
+    function showMenu() {
+      show = !show;
+      if (show) {
+        navLinks.style.right = "0";
+      } else {
+        navLinks.style.right = "-200px";
+        
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
