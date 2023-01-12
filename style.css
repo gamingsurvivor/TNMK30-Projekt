@@ -40,7 +40,7 @@
     .section-title span {
     color: black;
     }
-    .cta {
+    .homesearch {
     display: inline-block;
     padding: 10px 30px;
     color: white;
@@ -53,7 +53,7 @@
     transition: .3s ease;
     transition-property: background-color, color;
     }
-    .cta:hover {
+    .homesearch:hover {
     color: black;
     background-color: #EE4B2B;
     }
@@ -97,53 +97,6 @@
     max-width: 1300px;
     padding: 0 10px;
    }
-    /* #header .nav-list ul {
-    list-style: none;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    left: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    overflow-x: hidden;
-    transition: .5s ease left;
-    }
-    #header .nav-list ul.active {
-    left: 0%;
-    }
-    #header .nav-list ul a {
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: .2rem;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    padding: 20px;
-    display: block;
-    }
-    #header .nav-list ul a::after {
-    content: attr(data-after);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    color: black;
-    font-size: 13rem;
-    letter-spacing: 50px;
-    z-index: -1;
-    transition: .3s ease letter-spacing;
-    }
-    #header .nav-list ul li:hover a::after {
-    transform: translate(-50%, -50%) scale(1);
-    letter-spacing: initial;
-    }
-    /* #header .nav-list ul li:hover a {
-    color: black;
-    } */  
 
     @media only screen and (max-width: 1200px){
       #header div.nav-pages {
@@ -265,7 +218,7 @@
       align-content: space-around;
     }
 
-    #header .hamburger {
+    #header .menu {
     height: 60px;
     width: 60px;
     display: inline-block;
@@ -280,24 +233,24 @@
     transform: scale(.8);
     margin-right: 20px;
     }
-    #header .hamburger:after {
+    #header .menu:after {
     position: absolute;
     content: '';
     height: 100%;
     width: 100%;
     border-radius: 50%;
     border: 3px solid black;
-    animation: hamburger_puls 1s ease infinite;
+    animation: menu_puls 1s ease infinite;
     }
-    #header .hamburger .bar {
+    #header .menu .bar {
     height: 2px;
     width: 30px;
     position: absolute;
     background-color: black;
     z-index: -1;
     }
-    #header .hamburger .bar::after,
-    #header .hamburger .bar::before {
+    #header .menu .bar::after,
+    #header .menu .bar::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -307,28 +260,19 @@
     transition: .3s ease;
     transition-property: top, bottom;
     }
-    #header .hamburger .bar::after {
+    #header .menu .bar::after {
     top: 8px;
     }
-    #header .hamburger .bar::before {
+    #header .menu .bar::before {
     bottom: 8px;
     }
-    #header .hamburger.active .bar::before {
+    #header .menu.active .bar::before {
     bottom: 0;
     }
-    #header .hamburger.active .bar::after {
+    #header .menu.active .bar::after {
     top: 0;
     }
-    #header .menu{
-      opacity: 0;
-      width: 100%;
-      transform: translateY(-100%);
-      transition: transform 0.2s ease;
-
-    }
-    #header .menu:target{
-      transform: translateY(0);
-    }
+ 
     /* End Header section */
     
     /* Hero Section */
@@ -617,49 +561,6 @@
     text-align: left;
     }
     /* End Services Section */
-
-    /* contact Section */
-    #contact .contact {
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    }
-    #contact .contact-items {
-    width: 400px;
-    }
-    #contact .contact-item {
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0px 0px 18px 0 #0000002c;
-    transition: .3s ease box-shadow;
-    }
-    #contact .contact-item:hover {
-    box-shadow: 0px 0px 5px 0 #0000002c;
-    }
-    #contact .icon {
-    width: 70px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    }
-    #contact .contact-info h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-    }
-    #contact .contact-info h2 {
-    font-size: 1.3rem;
-    line-height: 2rem;
-    font-weight: 500;
-    }
-    /*End contact Section */
     
     /* Footer */
     #footer {
@@ -702,7 +603,7 @@
     /* End Footer */
     
     /* Keyframes */
-    @keyframes hamburger_puls {
+    @keyframes menu_puls {
     0% {
     opacity: 1;
     transform: scale(1);
@@ -737,7 +638,7 @@
     
     /* Media Query For Tablet */
     @media only screen and (min-width: 768px) {
-    .cta {
+    .homesearch {
     font-size: 2.5rem;
     padding: 20px 60px;
     }
@@ -799,25 +700,10 @@
     /* Media Query For Desktop */
     @media only screen and (min-width: 1200px) {
     /* header */
-    #header .hamburger {
+    #header .menu {
     display: none;
     }
-    /* #header .nav-list ul {
-    position: initial;
-    display: block;
-    height: auto;
-    width: fit-content;
-    background-color: transparent;
-    }
-    #header .nav-list ul li {
-    display: inline-block;
-    }
-    #header .nav-list ul li a {
-    font-size: 1.8rem;
-    }
-    #header .nav-list ul a:after {
-    display: none;
-    } */
+
     /* End header */
     
     #services .service-bottom .service-item {
